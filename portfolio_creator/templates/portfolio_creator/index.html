@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'portfolio_creator/styles.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>{{user.name}}</title>
+    </head>
+    <body>
+        <div class="body">
+            <h1 class="head">
+                <strong>
+                {% for user in details %}
+                {{ user.name }}
+                
+                </strong>
+                <p class="sub">
+                        {{user.summary}} 
+                </p>
+            </h1>
+            <br>
+            <div class="social">
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="{{user.github}}" class="fa fa-github"></a>
+                <a href="{{user.linkedin}}" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-telegram"></a>
+            </div>
+            
+            <ul class="nav">
+                <a href="about"><li>About</li></a>
+                <li>Contact</li>
+                <li>Projects</li>
+            </ul>
+            {% endfor %}
+        </div>
+    </body>
+</html>

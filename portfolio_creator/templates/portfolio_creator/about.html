@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'portfolio_creator/styles.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>{{user.name}}</title>
+    </head>
+    <body>
+        <div class="aboutbody">
+            <h1 class="head">
+                <strong>
+                    <img class="photo" height="130px" width="130px" src="{{ user.image.url }}" alt='img'">
+                    {% for na in name %}
+                    <a class="Name">{{na}}<br>
+                    </a>
+                    {% endfor %}
+                    <br><br>
+                    <a class="SubName">Software Engineer</a>
+                </strong>
+            </h1>
+            <br><br>
+            <br><br>
+            <table style="width:100%">
+                <tr>
+                    <th class="Head right">Education</th>
+                    <th class="Head left"><hr></th>
+                </tr>
+                <tr>
+                    <td class="Child right">{{user.course}}</td>
+                    <td class="Child left">{{user.college}}</td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <th class="Head right">Professional Skils</th>
+                    <th class="Head left"><hr></th>
+                </tr>
+                <tr>
+                    <td class="Child right">Programming<br>Languages</td>
+                    <td class="Child left">
+                        <ul>
+                            {% for la in languages %}
+                                <li>{{la}}</li>
+                                {% endfor %}
+                            
+                            
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                        <td class="Child right">Skills</td>
+                        <td class="Child left">
+                            <ul>
+                                {% for sk in skills %}
+                                <li>{{sk}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+            </table>
+        </div>
+    </body>
+</html>

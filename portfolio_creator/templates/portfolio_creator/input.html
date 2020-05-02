@@ -1,0 +1,33 @@
+<html>
+<head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio_creator/input.css' %}">
+
+<style>
+</style>
+
+</head>
+<body>
+
+  <div class="login-page">
+    <div class="form">
+      <h2>Portfolio Creator<h2><br>
+      <form class="login-form" action="" method = "Post">
+      {% csrf_token %}
+          <input type="text" placeholder="Name" name="name" required="required"/>
+        <input type="email" placeholder="Email" name="email" required="required"/>
+        <input type="file" placeholder="image" name="image"/>
+        <input type="text" placeholder="Bio" name="bio"/>
+          <input type="text" placeholder="programming languages(, seperated)" name="languages" required="required"/>
+          <input type="text" placeholder="Skills(comma seperated)" name="skills"required="required"/>
+        <input type="text" placeholder="Course name" name="course" required="required"/>
+          <input type="text" placeholder="College" name="college" required="required"/>
+        <input type="text" placeholder="LinkedIn profile link" name="linkedin"/>
+        
+       <input type="text" placeholder="Github profile link" name="github"/>
+        <button>Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

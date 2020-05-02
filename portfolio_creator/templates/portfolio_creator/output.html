@@ -1,0 +1,31 @@
+<html>
+<head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio_creator/input.css' %}">
+
+<style>
+</style>
+
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+  function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+    }
+  </script>
+
+  <div class="login-page">
+    <div class="form">
+      <h2><strong>Portfolio Creator</strong></h2><br>
+      <a id="p1">{{link}}</a> <br>
+        <button onclick="copyToClipboard('#p1')">Copy Portfolio Link</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
