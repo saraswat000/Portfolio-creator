@@ -3,8 +3,17 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'portfolio_creator/input.css' %}">
 
-<style>
-</style>
+<script>
+var counter = 1;
+function addInput(){
+     
+    var newdiv = document.createElement('div');
+    newdiv.innerHTML = "Project " + counter +  " <br><input type='text' placeholder='Project Title' name='ProjectTitle'/>" + " <br><input type='text' placeholder='Project Summary' name='ProjectSummary'/>" + " <br><input type='text' placeholder='Github or Website link' name='ProjectsLink'/>";
+    document.getElementById("ProjectId").appendChild(newdiv);
+    counter++; 
+}
+
+</script>
 
 </head>
 <body>
@@ -25,6 +34,11 @@
         <input type="text" placeholder="LinkedIn profile link" name="linkedin"/>
         
        <input type="text" placeholder="Github profile link" name="github"/>
+       <div id="ProjectId">
+       
+       </div>
+       <input type="button" value="Add Project" onClick="addInput()">
+        
         <button>Submit</button>
       </form>
     </div>

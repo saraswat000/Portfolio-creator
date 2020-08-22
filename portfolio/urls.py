@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.hello),
     path('portfolio/<slug:slug>/',views.index),
-    path('portfolio/<slug:slug>/about',views.about),  
+    path('portfolio/<slug:slug>/about',views.about),
+    path('portfolio/<slug:slug>/projects',views.projects),  
     path('portfolio/' , views.hello)
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

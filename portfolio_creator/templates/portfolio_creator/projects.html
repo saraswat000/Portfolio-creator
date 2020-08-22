@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'portfolio_creator/styles.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>{{user.name}}</title>
+        
+    </head>
+    <body>
+        <div class="aboutbody" background-color: #494F5C>
+            <h1 class="head">
+                <strong>
+                    
+                    {% for na in name %}
+                    <a class="Name">{{na}}<br>
+                    </a>
+                    {% endfor %}
+                    <br><br>
+                    <a class="SubName">Software Engineer</a>
+                </strong>
+            </h1>
+            <br><br>
+            <br><br>
+            <table style="width:100%">
+                <tr>
+                    <th class="Head right">Projects</th>
+                    <th class="Head left"><hr></th>
+                </tr>
+                {% for proj in projects %}
+                <tr>
+                    <td class="Child right">Title</td>
+                    <td class="Child left">{{proj.projectsTitle}}</td>
+                </tr>
+                 <tr>
+                    <td class="Child right">About</td>
+                    <td class="Child left">{{proj.projectsSummary}}</td> 
+                </tr>
+                <tr>
+                     <td class="Child right"></td>
+                    
+                    <td class="Child left nav"><a href="{{proj.projectsLink}}"><button type="button" class="btn btn-light">View Project</button></a></td> 
+                
+                
+                </tr>
+               
+                {% endfor %}
+                <tr>
+                    <td><br></td>
+                </tr>
+                
+                
+            </table>
+            
+        </div>
+    </body>
+</html>
